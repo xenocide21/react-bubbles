@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {axiosWithAuth} from "../helpers/AxiosWithAuth";
 import ColorPicker from "./ColorPicker";
 
+
 const initialColor = {
   color: "",
   code: { hex: "" }
@@ -121,6 +122,7 @@ const ColorList = ({ colors, updateColors }) => {
                 value={addNewColor.code.hex}
             />
           </label>
+            <ColorPicker/>
           <button type="submit">Save</button>
         </form>
       </div>
