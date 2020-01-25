@@ -2,6 +2,8 @@ import React from 'react'
 import reactCSS from 'reactcss'
 import { SketchPicker } from 'react-color'
 
+//Experimental feature---
+
 class ColorPicker extends React.Component {
     state = {
         displayColorPicker: false,

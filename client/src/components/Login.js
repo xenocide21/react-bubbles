@@ -7,8 +7,6 @@ const emptyForm = {
 }
 
 const Login = (props) => {
-    // make a post request to retrieve a token from the api
-    // when you have handled the token, navigate to the BubblePage route
     const [info, setInfo] = useState(emptyForm)
 
     const handleChange = e => {
@@ -20,7 +18,8 @@ const Login = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axiosWithAuth().post('api/login', info)
+        axiosWithAuth()
+            .post('api/login', info)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
                 setInfo(emptyForm)
@@ -33,7 +32,6 @@ const Login = (props) => {
             <h1>Welcome to the Bubble App!</h1>
             <div className="loginContainer">
                 <form onSubmit={handleSubmit}>
-
                     <div className="loginForm">
                         <input
                             type="text"
@@ -51,7 +49,6 @@ const Login = (props) => {
                         />
                         <button className="button" type="submit">Login</button>
                     </div>
-
                 </form>
             </div>
         </div>
